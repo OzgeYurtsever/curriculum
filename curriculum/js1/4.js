@@ -1,15 +1,22 @@
 /**
  * Print String - takes in a number n and string,
  *     return the string repeated n number of times.
- * @param {number} a
+ a* : @param {number} a
  * @param {string} b
- * @returns {string}
+ *a @returns {string}
  */
 
-const solution = (a, b) => {
-  return 0;
-};
+
+const solution  = (times, word) => {
+  if (times <= 0) {
+    return '';
+  } else if (times > 1) {
+    word += solution(times - 1, word);
+  }
+    return word;
+}
 
 module.exports = {
   solution,
 };
+
