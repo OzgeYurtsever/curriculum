@@ -8,6 +8,8 @@
  */
 
 const solution = (a, b, c) => {
+  setTimeout(c, a * 1000);
+  setTimeout(c, (a + b) * 1000);
 };
 
 module.exports = {
