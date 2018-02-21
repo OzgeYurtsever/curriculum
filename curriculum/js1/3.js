@@ -5,14 +5,13 @@
  * @returns {string}
  */
 
-const solution = (a, b = 'hello') => {
+const solution = (a, b = '') => {
   if (a <= 0 ) {
-    return '';
-  } else if (a > 1) {
-    b += solution(a - 1, b);
+    return b;
   }
-  return b;
+  return solution(a - 1, b + 'hello');
 }
+
 module.exports = {
   solution,
 };
