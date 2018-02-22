@@ -5,22 +5,16 @@
  * @returns {number}
  */
 
-const solution = (a, sum = 0, run = 1) => {
-  if (a === 0) {
-    return;
-  } 
-
-  let divisor = a - run;
-  if (divisor === 1) {
+const solution = (a, sum = 0, divisor = a - 1) => {
+  if (a <= 1 || divisor === 1) {
     return sum;
-  }
-
-  run++;
+  } 
 
   if (a % divisor === 0) {
     sum += divisor;
   }
-  return solution(a, sum, run);
+  
+  return solution(a, sum, divisor = divisor - 1);
 };
 
 module.exports = {
