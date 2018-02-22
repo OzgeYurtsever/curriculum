@@ -7,13 +7,11 @@
  */
 
 
-const solution  = (times, word) => {
+const solution  = (times, word, result = '' ) => {
   if (times <= 0) {
-    return '';
-  } else if (times > 1) {
-    word += solution(times - 1, word);
+    return result;
   }
-    return word;
+  return solution(times - 1, word, result + word);
 }
 
 module.exports = {
