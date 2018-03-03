@@ -4,23 +4,12 @@
  * @returns {number}
  */
 
-const solution = (a, isFirstRun = true) => {
-  if (a === 0) {
-    return solution(a + 1);
+const solution = (a, r = a + 1) => {
+  if (r % 7 === 0) {
+    return r;
   }
 
-  if (isFirstRun) {
-    if (a % 7  === 0) {
-      return solution(a + 1)
-    }
-    isFirstRun = false;
-  }
-
-  if (a % 7 === 0) {
-    return a;
-  }
-
-  return solution(a + 1, isFirstRun);
+  return solution(a + 1);
 }
 
 module.exports = {
