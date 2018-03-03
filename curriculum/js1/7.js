@@ -5,16 +5,20 @@
  * @returns {boolean}
  */
 
-const solution = (a) => {
-  if (a === 2) {
+const solution = (a, div = 2) => {
+  if (a <= 1) {
+    return false;
+  }
+
+  if (div >= a) {
     return true;
   }
 
-  if (a ===1) {
+  if (a % div === 0) {
     return false;
   }
-    
-  return a % 2 === 1;
+
+  return solution(a, div + 1);
 };
 
 module.exports = {
