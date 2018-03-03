@@ -6,10 +6,15 @@
  * @returns {string}
  */
 
-const solution = (a, b) => {
-  return 0;
-};
+
+const solution  = (times, word, result = '' ) => {
+  if (times <= 0) {
+    return result;
+  }
+  return solution(times - 1, word, result + word);
+}
 
 module.exports = {
   solution,
 };
+
